@@ -8,25 +8,32 @@ const Videos = ({ isLoadingVideosList, videosData, direction }) => {
   console.log(isLoadingVideosList);
   console.log(videosData);
   return (
-    <Stack
-      direction={
-        direction !== undefined
-          ? { xs: "row", sm: "row", md: direction }
-          : "row"
-      }
-      flexWrap={"wrap"}
-      justifyContent={"start"}
-      gap={2}
-    >
+    <div>
       {isLoadingVideosList && <Spinner />}
-      {!isLoadingVideosList &&
-        videosData?.map((el, idx) => (
-          <Box key={idx}>
-            {el.id.channelId && <ChannelCard channelDetail={el} />}
-            {el.id.videoId && <VideoCard video={el} />}
-          </Box>
-        ))}
-    </Stack>
+      {!isLoadingVideosList && (
+        <Stack
+          direction={
+            direction !== undefined
+              ? { xs: "row", sm: "row", md: direction }
+              : "row"
+          }
+          flexWrap={"wrap"}
+          justifyContent={"center"}
+          gap={2}
+        >
+          {!isLoadingVideosList &&
+            videosData?.map((el, idx) => (
+              <Box
+                sx={{ width: { xs: "100%", sm: "358px", md: "320px" } }}
+                key={idx}
+              >
+                {el.id.channelId && <ChannelCard channelDetail={el} />}
+                {el.id.videoId && <VideoCard video={el} />}
+              </Box>
+            ))}
+        </Stack>
+      )}
+    </div>
   );
 };
 

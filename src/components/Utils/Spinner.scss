@@ -3,7 +3,10 @@
     position: relative;
     width: 80px;
     height: 80px;
-    margin: 0 auto;
+    left: 50%; 
+    /* Calculates 50% of the element's width, and moves it by that */ 
+    /* amount across the X-axis to the left */
+    transform: translateX(-50%);
   }
   .lds-ring div {
     box-sizing: border-box;

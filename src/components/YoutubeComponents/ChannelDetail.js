@@ -43,8 +43,12 @@ const ChannelDetail = () => {
           }
         />
       </Box>
-      <Box display={"flex"} p="2">
-        <Box sx={{ mr: { sm: "100px" } }}></Box>
+      <Box
+        display={"flex"}
+        p="2"
+        sx={{ alignItems: "center", justifyContent: "center" }}
+      >
+        {/* <Box sx={{ mr: { sm: "100px" } }}></Box> */}
         <Videos
           isLoadingVideosList={channelVideos.getListVideoLoading}
           videosData={channelVideos.videos}
