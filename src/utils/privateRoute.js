@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import React from "react";
+import { Route, Redirect } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 export function PrivateRoute({ component: Component, ...rest }) {
@@ -7,10 +7,10 @@ export function PrivateRoute({ component: Component, ...rest }) {
     <Route
       {...rest}
       render={(props) =>
-        localStorage.getItem('token') ? (
+        localStorage.getItem("token") ? (
           <Component {...props} />
         ) : (
-          <Redirect to={{ pathname: '/login' }} />
+          <Redirect to={{ pathname: "/login" }} />
         )
       }
     />

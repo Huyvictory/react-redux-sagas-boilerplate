@@ -4,12 +4,12 @@
  * With some validations over these fields
  */
 
-import React from 'react';
-import moment from 'moment';
-import momentLocaliser from 'react-widgets-moment';
-import { DateTimePicker, DropdownList } from 'react-widgets';
-import 'react-widgets/dist/css/react-widgets.css';
-import { Label, Input, FormGroup } from 'reactstrap';
+import React from "react";
+import moment from "moment";
+import momentLocaliser from "react-widgets-moment";
+import { DateTimePicker, DropdownList } from "react-widgets";
+import "react-widgets/dist/css/react-widgets.css";
+import { Label, Input, FormGroup } from "reactstrap";
 
 momentLocaliser(moment);
 
@@ -47,18 +47,18 @@ const renderField = (props) => {
   } = props;
 
   return (
-    <FormGroup className="force-mb-10" style={{ width: '100%' }}>
+    <FormGroup className="force-mb-10" style={{ width: "100%" }}>
       <Label className="force_mb-5" for={name}>
-        {label || ''}
+        {label || ""}
       </Label>
       <Input
         {...input}
         disabled={disabled || false}
         type={type}
         className={
-          validationError || (touched && error) ? 'validation-error' : ''
+          validationError || (touched && error) ? "validation-error" : ""
         }
-        placeholder={placeholder || ''}
+        placeholder={placeholder || ""}
       />
       <Validations
         props={{
@@ -91,7 +91,7 @@ const renderDatePicker = (props) => {
   return (
     <FormGroup className="force-mb-10">
       <Label className=" force_mb-5" for={name}>
-        {label || ''}
+        {label || ""}
       </Label>
       <DateTimePicker
         onChange={onChange}
@@ -102,9 +102,9 @@ const renderDatePicker = (props) => {
         timeFormat={timeFormating}
         disabled={disabled || false}
         defaultValue={null}
-        placeholder={placeholder || ''}
+        placeholder={placeholder || ""}
         className={
-          validationError || (touched && error) ? 'validation-error' : ''
+          validationError || (touched && error) ? "validation-error" : ""
         }
         value={!value ? null : new Date(value)}
         min={null}
@@ -163,7 +163,7 @@ const renderSelectField = (props) => {
   return (
     <FormGroup>
       <Label className="force_mb-5" for={name}>
-        {label || ''}
+        {label || ""}
       </Label>
       <DropdownList
         {...input}
@@ -171,7 +171,7 @@ const renderSelectField = (props) => {
         defaultValue={defaultSelected}
         name={name}
         className={
-          validationError || (touched && error) ? 'validation-error' : ''
+          validationError || (touched && error) ? "validation-error" : ""
         }
         disabled={disabled || false}
         placeholder={placeholder || null}

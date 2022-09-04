@@ -2,7 +2,7 @@ import {
   GET_LIST,
   GET_LIST_SUCCESS,
   GET_LIST_FAILURE,
-} from 'actions/Auth/actionTypes';
+} from "actions/Auth/actionTypes";
 
 const initialState = {
   getListLoading: false,
@@ -15,7 +15,7 @@ const getList = (state, action) => ({
 });
 
 const getListSuccess = (state, action) => {
-  console.log('check the data in reducer', action);
+  console.log("check the data in reducer", action);
   return {
     ...state,
     getListLoading: false,

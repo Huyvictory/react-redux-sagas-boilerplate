@@ -1,7 +1,7 @@
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 export function pushNotification(msg, type, position, duration) {
-  if (type === 'info') {
+  if (type === "info") {
     return toast.info(msg, {
       position: position ? toast.POSITION[position] : toast.POSITION.TOP_CENTER,
       autoClose: duration || 3000,
@@ -9,7 +9,7 @@ export function pushNotification(msg, type, position, duration) {
       pauseOnHover: false,
       newestOnTop: true,
     });
-  } else if (type === 'success') {
+  } else if (type === "success") {
     return toast.success(msg, {
       position: position ? toast.POSITION[position] : toast.POSITION.TOP_CENTER,
       autoClose: duration || 3000,
@@ -17,7 +17,7 @@ export function pushNotification(msg, type, position, duration) {
       pauseOnHover: false,
       newestOnTop: true,
     });
-  } else if (type === 'warning') {
+  } else if (type === "warning") {
     return toast.warn(msg, {
       position: position ? toast.POSITION[position] : toast.POSITION.TOP_CENTER,
       autoClose: duration || 3000,
@@ -25,7 +25,7 @@ export function pushNotification(msg, type, position, duration) {
       pauseOnHover: false,
       newestOnTop: true,
     });
-  } else if (type === 'error') {
+  } else if (type === "error") {
     return toast.error(msg, {
       position: position ? toast.POSITION[position] : toast.POSITION.TOP_CENTER,
       autoClose: duration || 3000,
