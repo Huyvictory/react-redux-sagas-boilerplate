@@ -15,6 +15,7 @@
   "plugins": ["react"],
   "rules": {
     "node/no-callback-literal": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "react/react-in-jsx-scope": "off"
   }
 }

@@ -1,15 +1,13 @@
-import React from 'react';
+import React from "react";
+import "./index.scss";
+import { Typography } from "@mui/material";
 
 const Footer = (props) => (
-  <footer className="app-footer">
-    <div>
-      <a href="https://systango.com">Systango</a>
-      <span>&copy; 2019 Systango Labs.</span>
-    </div>
-    <div className="ml-auto">
-      <span>Powered by</span>
-    </div>
-  </footer>
+  <div className="app-footer">
+    <Typography variant="body2" sx={{ mt: 1.5, color: "#fff" }}>
+      Practice MUI with Youtube Clone
+    </Typography>
+  </div>
 );
 
 export default Footer;
