@@ -19,7 +19,9 @@ export default function App() {
         <Header></Header>
         <Routes>
           <Route path="/" exact element={<Body />} />
-          <Route path="/video/:id" element={<VideoDetail />} />
+          <Route path="/video/">
+            <Route path=":id/:idChannel" element={<VideoDetail />} />
+          </Route>
           <Route path="/channel/:id" element={<ChannelDetail />} />
           <Route path="/search/:searchKeyword" element={<SearchFeed />} />
         </Routes>

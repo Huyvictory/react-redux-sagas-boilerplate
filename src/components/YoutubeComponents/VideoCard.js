@@ -11,6 +11,7 @@ import {
   demoChannelUrl,
   demoChannelTitle,
 } from "constants/icons";
+import { countDueDay } from "utils/countDueDay";
 
 const VideoCard = ({ video }) => {
   const { id, snippet } = video;
@@ -23,7 +24,13 @@ const VideoCard = ({ video }) => {
         borderRadius: 0,
       }}
     >
-      <Link to={id.videoId ? `/video/${id.videoId}` : demoVideoUrl}>
+      <Link
+        to={
+          id.videoId
+            ? `/video/${id.videoId}/${snippet?.channelId}`
+            : demoVideoUrl
+        }
+      >
         <CardMedia
           image={snippet?.thumbnails?.high?.url}
           alt={snippet?.title}
@@ -46,6 +53,9 @@ const VideoCard = ({ video }) => {
           <Typography variant="subtitle2" fontWeight={"bold"} color={"gray"}>
             {snippet?.channelTitle || demoChannelTitle}
             <CheckCircle sx={{ fontSize: 12, color: "gray", ml: "5px" }} />
+            <Typography ml={"5px"} variant="subtitle3">
+              - {Math.abs(countDueDay(snippet?.publishedAt))} days
+            </Typography>
           </Typography>
         </Link>
       </CardContent>

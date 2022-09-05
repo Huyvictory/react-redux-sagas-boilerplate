@@ -11,6 +11,9 @@ import {
   GET_CHANNEL_DETAIL,
   GET_CHANNEL_DETAIL_SUCCESS,
   GET_CHANNEL_DETAIL_FAILURE,
+  GET_LIST_COMMENTS,
+  GET_LIST_COMMENTS_SUCCESS,
+  GET_LIST_COMMENTS_FAILURE,
 } from "./actionTypes";
 
 export const getList = () => ({
@@ -66,4 +69,18 @@ export const getChannelDetailSuccess = (data) => ({
 
 export const getChanelDetailFailure = () => ({
   type: GET_CHANNEL_DETAIL_FAILURE,
+});
+
+export const getListComments = (payload) => ({
+  type: GET_LIST_COMMENTS,
+  payload: payload,
+});
+
+export const getListCommentsSuccess = (data) => ({
+  type: GET_LIST_COMMENTS_SUCCESS,
+  payload: data,
+});
+
+export const getListCommentsFailiure = () => ({
+  type: GET_LIST_COMMENTS_FAILURE,
 });

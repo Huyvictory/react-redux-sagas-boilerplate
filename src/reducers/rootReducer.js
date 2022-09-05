@@ -4,6 +4,7 @@ import { reducer as formReducer } from "redux-form";
 import authReducer from "./authReducer";
 import videosReducer from "./videosReducer";
 import channelReducer from "./channelReducer";
+import commentsReducer from "./commentsReducer";
 
 const appReducer = combineReducers({
   routing: routerReducer,
@@ -11,6 +12,7 @@ const appReducer = combineReducers({
   form: formReducer,
   videos: videosReducer,
   channel: channelReducer,
+  comments: commentsReducer,
 });
 
 const rootReducer = (state, action) => {

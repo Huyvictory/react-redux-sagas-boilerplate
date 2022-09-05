@@ -5,6 +5,7 @@ import { CheckCircle } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 import { demoProfilePicture } from "constants/icons";
+import { nFormatter } from "utils/formatNumber";
 
 const ChannelCard = ({ channelDetail, marginTop, disabledLink }) => {
   return (
@@ -59,10 +60,8 @@ const ChannelCard = ({ channelDetail, marginTop, disabledLink }) => {
             <Typography
               sx={{ fontSize: "15px", fontWeight: 500, color: "gray" }}
             >
-              {parseInt(
-                channelDetail?.statistics?.subscriberCount
-              ).toLocaleString("en-US")}{" "}
-              Subscribers
+              {`${nFormatter(channelDetail?.statistics?.subscriberCount, 1)}
+              Subscribers`}
             </Typography>
           )}
         </CardContent>

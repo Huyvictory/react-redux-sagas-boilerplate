@@ -8,7 +8,7 @@ const Videos = ({ isLoadingVideosList, videosData, direction }) => {
   console.log(isLoadingVideosList);
   console.log(videosData);
   return (
-    <div>
+    <div style={{ overflowY: "scroll", maxHeight: "150vh" }}>
       {isLoadingVideosList && <Spinner />}
       {!isLoadingVideosList && (
         <Stack
